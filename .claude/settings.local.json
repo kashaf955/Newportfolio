@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "WebFetch(domain:iamabdul-moiz.vercel.app)",
-      "Bash(start \"\" \"d:/Kashaf/Kashaf Portfolio/experience.html\")"
-    ]
-  }
-}
