@@ -45,6 +45,50 @@ if (copyBtn) {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// testimonial carousels
+document.querySelectorAll('.testimonial-carousel').forEach((carousel) => {
+  const track = carousel.querySelector('.testimonial-track');
+  const dotsWrap = carousel.querySelector('[data-carousel-dots]');
+  const prevBtn = carousel.querySelector('[data-carousel-prev]');
+  const nextBtn = carousel.querySelector('[data-carousel-next]');
+  const cards = track ? Array.from(track.children) : [];
+  if (!track || !cards.length) return;
+
+  const dots = cards.map((card, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'carousel-dot';
+    dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
+    dot.addEventListener('click', () => {
+      card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+    });
+    if (dotsWrap) dotsWrap.appendChild(dot);
+    return dot;
+  });
+  if (dots[0]) dots[0].classList.add('is-active');
+
+  function setActive(index) {
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+  }
+
+  function scrollByCard(dir) {
+    const cardRect = cards[0].getBoundingClientRect();
+    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 24);
+    track.scrollBy({ left: dir * (cardRect.width + gap), behavior: 'smooth' });
+  }
+  if (prevBtn) prevBtn.addEventListener('click', () => scrollByCard(-1));
+  if (nextBtn) nextBtn.addEventListener('click', () => scrollByCard(1));
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(cards.indexOf(entry.target));
+      });
+    }, { root: track, threshold: 0.6 });
+    cards.forEach((c) => io.observe(c));
+  }
+});
+
 // smooth (lerp) wheel scrolling — desktop only, respects reduced-motion
 (function () {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -82,6 +126,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
 
   window.addEventListener('wheel', (e) => {
+    if (e.target.closest('.testimonial-track')) return;
     target = Math.max(0, Math.min(target + e.deltaY * 1.35, maxScroll()));
     e.preventDefault();
     startLoop();
