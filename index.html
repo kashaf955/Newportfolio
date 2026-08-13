@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kashaf Tariq — Full Stack Engineer</title>
+<meta name="description" content="Portfolio of Kashaf Tariq, a Full Stack Engineer building scalable, multi-tenant MERN + Next.js applications for clients across Pakistan and abroad.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230A0E13'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='56' font-weight='700' fill='%233FA0FF' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="logo">kashaf<span>.</span>tariq</a>
+    <nav class="nav-links">
+      <a href="about.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="community.html">Community</a>
+      <a href="work.html">Work</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="mailto:kashaftariq496@gmail.com" class="nav-cta">Say hello</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
+    <a href="community.html">Community</a>
+    <a href="work.html">Work</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Full Stack Engineer</p>
+        <h1 class="hero-title">I build <em>systems</em>, not just screens.</h1>
+        <p class="hero-sub">Full-stack engineer building scalable, multi-tenant applications in production — for clients across Pakistan and abroad, on React, Next.js, Node.js and MongoDB.</p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">View my work</a>
+          <a href="#contact" class="btn btn-secondary">Get in touch</a>
+        </div>
+        <div class="hero-status">
+          <div class="stat"><div class="stat-value">2+ Years</div><div class="stat-label">Experience</div></div>
+          <div class="stat"><div class="stat-value">MERN + Next.js</div><div class="stat-label">Core Stack</div></div>
+          <div class="stat"><div class="stat-value">Local &amp; Intl.</div><div class="stat-label">Clients</div></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <svg class="hero-diagram" viewBox="0 0 560 560" role="img" aria-label="Diagram showing Kashaf Tariq at the center, connected to React, Next.js, Node.js, MongoDB, TypeScript and AI systems">
+          <circle class="diagram-ring" cx="280" cy="280" r="200"/>
+          <g>
+            <line class="pulse-line" x1="280" y1="280" x2="280" y2="80" style="animation-delay:0s"/>
+            <line class="pulse-line" x1="280" y1="280" x2="453" y2="180" style="animation-delay:.3s"/>
+            <line class="pulse-line" x1="280" y1="280" x2="453" y2="380" style="animation-delay:.6s"/>
+            <line class="pulse-line" x1="280" y1="280" x2="280" y2="480" style="animation-delay:.9s"/>
+            <line class="pulse-line" x1="280" y1="280" x2="107" y2="380" style="animation-delay:1.2s"/>
+            <line class="pulse-line" x1="280" y1="280" x2="107" y2="180" style="animation-delay:1.5s"/>
+          </g>
+          <g class="node"><circle cx="280" cy="80" r="44"/><text x="280" y="85">REACT</text></g>
+          <g class="node"><circle cx="453" cy="180" r="44"/><text x="453" y="185">NEXT.JS</text></g>
+          <g class="node"><circle cx="453" cy="380" r="44"/><text x="453" y="385">NODE.JS</text></g>
+          <g class="node"><circle cx="280" cy="480" r="44"/><text x="280" y="485">MONGODB</text></g>
+          <g class="node"><circle cx="107" cy="380" r="44"/><text x="107" y="385">TYPESCRIPT</text></g>
+          <g class="node"><circle cx="107" cy="180" r="44"/><text x="107" y="185">AI / ML</text></g>
+          <g class="node node-center">
+            <circle cx="280" cy="280" r="62"/>
+            <text x="280" y="275">KASHAF</text>
+            <text x="280" y="293">TARIQ</text>
+          </g>
+        </svg>
+        <p class="diagram-caption">// full-stack integration point</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">System Overview</p>
+        <h2>Who's running this?</h2>
+      </div>
+      <div class="about-grid">
+        <div class="panel-window reveal">
+          <div class="panel-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="panel-filename">about.yaml</span>
+          </div>
+          <div class="panel-body">
+            <div><span class="kv-key">role</span><span class="kv-punc">:</span> <span class="kv-str">"Full Stack Engineer"</span></div>
+            <div><span class="kv-key">company</span><span class="kv-punc">:</span> <span class="kv-str">"DOSTSOL Global"</span></div>
+            <div><span class="kv-key">focus</span><span class="kv-punc">:</span> <span class="kv-str">"Scalable, multi-tenant full-stack & AI systems"</span></div>
+            <div><span class="kv-key">experience</span><span class="kv-punc">:</span> <span class="kv-str">"2+ years — local & international clients"</span></div>
+            <div><span class="kv-key">stack</span><span class="kv-punc">:</span> [<span class="kv-str">"MERN"</span>, <span class="kv-str">"Next.js"</span>, <span class="kv-str">"TypeScript"</span>, <span class="kv-str">"Tailwind"</span>]</div>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <p>Kashaf designs and ships full-stack products end to end — REST APIs, databases, and responsive, type-safe interfaces — with an emphasis on <strong>architecture that holds up</strong> across multiple clients and tenants as products grow.</p>
+          <p>Day to day, that means React and Next.js on the front end, Node.js and Express on the back end, MongoDB and Firebase for data, and enough AI tooling layered in to make the whole system a little smarter than a typical CRUD app.</p>
+          <p>Outside client work, Kashaf documents and reports for community initiative <strong>Dastgahe Karam</strong>, and previously led events and served as President at <strong>UEIT Society</strong>.</p>
+          <a href="about.html" class="work-link">View full bio<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack" class="stack">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Tech Stack</p>
+        <h2>What's actually under the hood</h2>
+        <p>The tools Kashaf reaches for on a typical build — grouped by where they sit in the system.</p>
+      </div>
+      <div class="stack-groups">
+        <div class="reveal">
+          <p class="stack-group-label">Languages</p>
+          <div class="stack-chips">
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=html&theme=dark" alt=""><span>HTML</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=css&theme=dark" alt=""><span>CSS</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=js&theme=dark" alt=""><span>JavaScript</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=ts&theme=dark" alt=""><span>TypeScript</span></div>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="stack-group-label">Frontend</p>
+          <div class="stack-chips">
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=react&theme=dark" alt=""><span>React</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=next&theme=dark" alt=""><span>Next.js</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=tailwind&theme=dark" alt=""><span>Tailwind CSS</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=bootstrap&theme=dark" alt=""><span>Bootstrap</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=vite&theme=dark" alt=""><span>Vite</span></div>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="stack-group-label">Backend</p>
+          <div class="stack-chips">
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=nodejs&theme=dark" alt=""><span>Node.js</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=express&theme=dark" alt=""><span>Express.js</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=mongodb&theme=dark" alt=""><span>MongoDB</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=firebase&theme=dark" alt=""><span>Firebase</span></div>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="stack-group-label">Tools</p>
+          <div class="stack-chips">
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=git&theme=dark" alt=""><span>Git</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=github&theme=dark" alt=""><span>GitHub</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=vscode&theme=dark" alt=""><span>VS Code</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=postman&theme=dark" alt=""><span>Postman</span></div>
+            <div class="stack-chip"><img src="https://skillicons.dev/icons?i=figma&theme=dark" alt=""><span>Figma</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="log">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Experience</p>
+        <h2>Where the work has happened</h2>
+        <p>A running log of professional roles, most recent first.</p>
+      </div>
+      <div class="log-list">
+        <div class="log-entry reveal">
+          <div class="log-meta">
+            <span class="log-hash">a3f9c1e</span>
+            <span class="log-badge work">WORK</span>
+            <span class="log-date">Current</span>
+          </div>
+          <div>
+            <p class="log-title">Full Stack Engineer <span>— DOSTSOL Global</span></p>
+            <p class="log-desc">Building production MERN + Next.js applications, RESTful APIs, and scalable multi-tenant architecture for local and international clients.</p>
+          </div>
+        </div>
+        <div class="log-entry reveal">
+          <div class="log-meta">
+            <span class="log-hash">b61d7f3</span>
+            <span class="log-badge work">WORK</span>
+            <span class="log-date">2024</span>
+          </div>
+          <div>
+            <p class="log-title">Software Engineering Fellow <span>— Headstarter AI</span></p>
+            <p class="log-desc">Built AI-powered full-stack projects in a fast-paced fellowship cohort, shipping features end to end on tight iteration cycles.</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:36px;" class="reveal">
+        <a href="experience.html" class="btn btn-secondary">See all experiences</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section id="community" class="community">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Community</p>
+        <h2>Work outside the client roster</h2>
+        <p>Community initiatives and society roles — leading a <strong>200+ member</strong> society and helping <strong>Dastgahe Karam</strong> raise up the families it supports.</p>
+      </div>
+      <div class="impact-card reveal">
+        <div class="impact-card-top">
+          <span class="impact-logo">UEIT</span>
+          <div>
+            <p class="impact-card-title">UEIT Society</p>
+            <p class="impact-card-sub">Started in event management, rose to X-President — leading a 200+ member student engineering society.</p>
+          </div>
+        </div>
+        <div class="impact-stats">
+          <div class="impact-stat-item"><div class="impact-stat-value">200+</div><div class="impact-stat-label">Members Led</div></div>
+          <div class="impact-stat-item"><div class="impact-stat-value">2</div><div class="impact-stat-label">Roles Held</div></div>
+        </div>
+      </div>
+
+      <div class="impact-card reveal">
+        <div class="impact-card-top">
+          <span class="impact-logo">DK</span>
+          <div>
+            <p class="impact-card-title">Dastgahe Karam</p>
+            <p class="impact-card-sub">Documentation &amp; Reporting Lead — helping families in need since 2024.</p>
+          </div>
+        </div>
+        <div class="impact-stats">
+          <div class="impact-stat-item"><div class="impact-stat-value">2024</div><div class="impact-stat-label">Active Since</div></div>
+          <div class="impact-stat-item"><div class="impact-stat-value">Families</div><div class="impact-stat-label">Helped &amp; Raised Up</div></div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:36px;" class="reveal">
+        <a href="community.html" class="btn btn-secondary">See impact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" class="work">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Projects</p>
+        <h2>A few things that shipped</h2>
+        <p>Full-stack builds, each one taken from a blank repo to a working product.</p>
+      </div>
+      <div class="work-grid">
+        <div class="work-card reveal">
+          <div class="work-card-head"><span class="work-name">UET Panda</span></div>
+          <p class="work-desc">A full-stack food ordering system — browsing, cart, and order flow built on the MERN stack.</p>
+          <div class="work-icons">
+            <img src="https://skillicons.dev/icons?i=react&theme=dark" alt="React">
+            <img src="https://skillicons.dev/icons?i=nodejs&theme=dark" alt="Node.js">
+            <img src="https://skillicons.dev/icons?i=express&theme=dark" alt="Express">
+            <img src="https://skillicons.dev/icons?i=mongodb&theme=dark" alt="MongoDB">
+          </div>
+          <a href="https://github.com/kashaf955/UETPanda" class="work-link" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+        <div class="work-card reveal">
+          <div class="work-card-head"><span class="work-name">HomeVista</span></div>
+          <p class="work-desc">A full-stack MERN real estate platform with authentication and property management.</p>
+          <div class="work-icons">
+            <img src="https://skillicons.dev/icons?i=react&theme=dark" alt="React">
+            <img src="https://skillicons.dev/icons?i=nodejs&theme=dark" alt="Node.js">
+            <img src="https://skillicons.dev/icons?i=express&theme=dark" alt="Express">
+            <img src="https://skillicons.dev/icons?i=mongodb&theme=dark" alt="MongoDB">
+          </div>
+          <a href="https://github.com/kashaf955/HomeVista" class="work-link" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+        <div class="work-card reveal">
+          <div class="work-card-head"><span class="work-name">CozyCorner</span></div>
+          <p class="work-desc">A full-stack booking and listing web application built on the MERN stack.</p>
+          <div class="work-icons">
+            <img src="https://skillicons.dev/icons?i=react&theme=dark" alt="React">
+            <img src="https://skillicons.dev/icons?i=nodejs&theme=dark" alt="Node.js">
+            <img src="https://skillicons.dev/icons?i=express&theme=dark" alt="Express">
+            <img src="https://skillicons.dev/icons?i=mongodb&theme=dark" alt="MongoDB">
+          </div>
+          <a href="https://github.com/kashaf955/CozyCorner" class="work-link" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+      </div>
+      <p class="stack-group-note"><a href="work.html" class="work-link">View all project case studies<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Testimonials</p>
+        <h2>What people say about me</h2>
+        <p>Placeholder cards — real quotes from clients and collaborators go here.</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">"Placeholder quote — add a sentence or two about what it was like working with Kashaf."</p>
+          <div class="testimonial-author">
+            <span class="testimonial-avatar">?</span>
+            <div>
+              <p class="testimonial-name">Client Name</p>
+              <p class="testimonial-role">Title, Company</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">"Placeholder quote — add a sentence or two about what it was like working with Kashaf."</p>
+          <div class="testimonial-author">
+            <span class="testimonial-avatar">?</span>
+            <div>
+              <p class="testimonial-name">Client Name</p>
+              <p class="testimonial-role">Title, Company</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">"Placeholder quote — add a sentence or two about what it was like working with Kashaf."</p>
+          <div class="testimonial-author">
+            <span class="testimonial-avatar">?</span>
+            <div>
+              <p class="testimonial-name">Client Name</p>
+              <p class="testimonial-role">Title, Company</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container contact-inner">
+      <div class="contact-side reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's build something.</h2>
+        <p>Open to new projects, collaborations, and conversations about full-stack or AI-powered products. The fastest way to reach Kashaf is email.</p>
+        <a href="mailto:kashaftariq496@gmail.com" class="btn btn-primary">Send an email</a>
+        <p style="margin-top:20px;"><a href="contact.html" class="work-link">More ways to connect<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></p>
+      </div>
+      <div class="panel-window reveal">
+        <div class="panel-header">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="panel-filename">contact.sh</span>
+        </div>
+        <div class="terminal-body">
+          <div><span class="prompt">$</span> whoami</div>
+          <div class="out">Kashaf Tariq — Full Stack Engineer</div>
+          <div style="height:10px"></div>
+          <div><span class="prompt">$</span> contact --list</div>
+          <div class="out">email &nbsp;&nbsp;<a href="mailto:kashaftariq496@gmail.com">kashaftariq496@gmail.com</a>
+            <button class="copy-btn" id="copyEmail" type="button">copy</button>
+          </div>
+          <div class="out">github &nbsp;<a href="https://github.com/kashaf955" target="_blank" rel="noopener">github.com/kashaf955</a></div>
+          <div class="out">linkedin <a href="https://www.linkedin.com/in/kashaf-tariq-948163258/" target="_blank" rel="noopener">/in/kashaf-tariq-948163258</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="footer-text">© <span id="year"></span> Kashaf Tariq — built with React &amp; Node.js</span>
+    <div class="social-row">
+      <a class="social-badge" href="mailto:kashaftariq496@gmail.com" aria-label="Email">@</a>
+      <a class="social-badge" href="https://github.com/kashaf955" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+      <a class="social-badge" href="https://www.linkedin.com/in/kashaf-tariq-948163258/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+
+</body>
+</html>
