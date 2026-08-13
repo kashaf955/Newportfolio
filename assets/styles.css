@@ -295,24 +295,40 @@ strong{color:var(--text); font-weight:600;}
 /* ---------- responsive ---------- */
 @media (max-width:980px){
   .hero-grid{grid-template-columns:1fr;}
-  .hero-visual{order:-1; margin-bottom:12px;}
+  .hero-visual{margin-top:32px;}
   .hero{padding:130px 0 60px;}
   .about-grid{grid-template-columns:1fr; gap:36px;}
   .stack-groups{grid-template-columns:repeat(2,1fr);}
   .work-grid{grid-template-columns:1fr;}
   .detail-card-grid{grid-template-columns:1fr;}
+  .testimonial-grid{grid-template-columns:1fr;}
   .contact-inner{grid-template-columns:1fr;}
+  .detail-hero{padding:130px 0 44px;}
   .nav-links{display:none;}
   .nav-toggle{display:flex;}
 }
 @media (max-width:640px){
   .container{padding:0 20px;}
-  section{padding:76px 0;}
+  section{padding:64px 0;}
+  .hero{padding:112px 0 48px; min-height:auto;}
+  .detail-hero{padding:112px 0 36px;}
+  .detail-section{padding:0 0 64px;}
+  .detail-section:last-of-type{padding-bottom:76px;}
   .log-entry{grid-template-columns:1fr; gap:10px;}
   .hero-status{flex-wrap:wrap; row-gap:16px;}
   .stat{border-left:none; padding:0 20px 0 0;}
   .nav-cta{display:none;}
+  .mobile-menu{padding:10px 20px 20px;}
+  .stack-groups{grid-template-columns:1fr;}
   .detail-card-head{flex-direction:column; align-items:flex-start;}
+  .impact-card, .detail-card, .work-card, .testimonial-card{padding:22px;}
+  .impact-card-top{gap:14px;}
+  .impact-logo{width:46px; height:46px; font-size:12px;}
+  .exp-title{font-size:19px;}
+  .exp-timeline{padding-left:28px;}
+  .exp-dot{left:-28px;}
+  .panel-body, .terminal-body{padding:18px;}
+  .section-head{margin-bottom:36px;}
 }
 
 @media (prefers-reduced-motion: reduce){
