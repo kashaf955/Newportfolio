@@ -45,22 +45,38 @@ if (copyBtn) {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// testimonial carousels
+// testimonial carousels — auto-scrolling, seamless infinite loop
 document.querySelectorAll('.testimonial-carousel').forEach((carousel) => {
   const track = carousel.querySelector('.testimonial-track');
   const dotsWrap = carousel.querySelector('[data-carousel-dots]');
   const prevBtn = carousel.querySelector('[data-carousel-prev]');
   const nextBtn = carousel.querySelector('[data-carousel-next]');
-  const cards = track ? Array.from(track.children) : [];
-  if (!track || !cards.length) return;
+  const originals = track ? Array.from(track.children) : [];
+  if (!track || !originals.length) return;
 
-  const dots = cards.map((card, i) => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const count = originals.length;
+
+  // duplicate the set once so scrolling past the end reveals more of the same
+  // sequence — the loop then resets invisibly, never actually reaching an edge
+  originals.forEach((card) => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelectorAll('a, button').forEach((el) => el.setAttribute('tabindex', '-1'));
+    track.appendChild(clone);
+  });
+  const allCards = Array.from(track.children);
+  track.style.scrollSnapType = 'none';
+
+  const dots = originals.map((_, i) => {
     const dot = document.createElement('button');
     dot.type = 'button';
     dot.className = 'carousel-dot';
     dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
     dot.addEventListener('click', () => {
-      card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      pause();
+      track.scrollTo({ left: cardOffset(i), behavior: 'smooth' });
+      resumeSoon();
     });
     if (dotsWrap) dotsWrap.appendChild(dot);
     return dot;
@@ -68,13 +84,22 @@ document.querySelectorAll('.testimonial-carousel').forEach((carousel) => {
   if (dots[0]) dots[0].classList.add('is-active');
 
   function setActive(index) {
-    dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === (index % count)));
+  }
+
+  function cardStep() {
+    const rect = originals[0].getBoundingClientRect();
+    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 24);
+    return rect.width + gap;
+  }
+  function cardOffset(i) {
+    return i * cardStep();
   }
 
   function scrollByCard(dir) {
-    const cardRect = cards[0].getBoundingClientRect();
-    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 24);
-    track.scrollBy({ left: dir * (cardRect.width + gap), behavior: 'smooth' });
+    pause();
+    track.scrollBy({ left: dir * cardStep(), behavior: 'smooth' });
+    resumeSoon();
   }
   if (prevBtn) prevBtn.addEventListener('click', () => scrollByCard(-1));
   if (nextBtn) nextBtn.addEventListener('click', () => scrollByCard(1));
@@ -82,10 +107,38 @@ document.querySelectorAll('.testimonial-carousel').forEach((carousel) => {
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) setActive(cards.indexOf(entry.target));
+        if (entry.isIntersecting) setActive(allCards.indexOf(entry.target));
       });
     }, { root: track, threshold: 0.6 });
-    cards.forEach((c) => io.observe(c));
+    allCards.forEach((c) => io.observe(c));
+  }
+
+  // continuous auto-scroll — pauses briefly for hover/touch/manual nav,
+  // otherwise loops forever
+  let paused = false;
+  let resumeTimer = null;
+  function pause() { paused = true; if (resumeTimer) clearTimeout(resumeTimer); }
+  function resumeSoon() { resumeTimer = setTimeout(() => { paused = false; }, 900); }
+
+  carousel.addEventListener('mouseenter', pause);
+  carousel.addEventListener('mouseleave', () => { paused = false; });
+  carousel.addEventListener('touchstart', pause, { passive: true });
+  carousel.addEventListener('touchend', resumeSoon, { passive: true });
+  track.addEventListener('wheel', () => { pause(); resumeSoon(); }, { passive: true });
+
+  if (!reduceMotion) {
+    const speed = 0.5; // px per frame
+    function loop() {
+      const setWidth = track.scrollWidth / 2;
+      if (!paused) {
+        track.scrollLeft += speed;
+      }
+      if (track.scrollLeft >= setWidth) {
+        track.scrollLeft -= setWidth;
+      }
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
   }
 });
 
