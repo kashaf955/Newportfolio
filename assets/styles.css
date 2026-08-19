@@ -116,7 +116,7 @@ strong{color:var(--text); font-weight:600;}
 /* ---------- hero ---------- */
 .hero{padding:150px 0 90px; min-height:92vh; display:flex; align-items:center;}
 .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px; align-items:center;}
-.hero-title{font-size:clamp(2.3rem,4.6vw,3.6rem); line-height:1.1; margin-bottom:22px;}
+.hero-title{font-size:clamp(1.5rem,7vw,3.6rem); line-height:1.1; margin-bottom:22px; white-space:nowrap;}
 .hero-title em{font-style:normal; color:var(--accent);}
 .hero-sub{color:var(--text-dim); font-size:17px; line-height:1.7; max-width:48ch; margin-bottom:32px;}
 .hero-actions{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:44px;}
