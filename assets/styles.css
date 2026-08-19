@@ -137,6 +137,7 @@ strong{color:var(--text); font-weight:600;}
 
 /* ---------- about (config panel) ---------- */
 .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;}
+.about-grid.stacked{grid-template-columns:1fr; gap:32px;}
 .panel-window{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden;}
 .panel-header{display:flex; align-items:center; gap:8px; padding:13px 18px; border-bottom:1px solid var(--border); background:var(--panel-hover);}
 .dot{width:9px; height:9px; border-radius:50%;}
@@ -146,12 +147,13 @@ strong{color:var(--text); font-weight:600;}
 .kv-key{color:var(--accent);}
 .kv-str{color:var(--amber);}
 .kv-punc{color:var(--text-faint);}
+.about-text{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-lg); padding:30px 32px;}
 .about-text p{color:var(--text-dim); font-size:16px; line-height:1.75; margin-bottom:18px;}
 .about-text p:last-child{margin-bottom:0;}
 .about-text strong{color:var(--text); font-weight:600;}
 
 /* ---------- stack ---------- */
-.stack-groups{display:grid; grid-template-columns:repeat(5,1fr); gap:28px;}
+.stack-groups{display:grid; grid-template-columns:repeat(6,1fr); gap:28px;}
 .stack-group-label{font-family:var(--font-mono); font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber); margin-bottom:16px;}
 .stack-chips{display:flex; flex-direction:column; gap:10px;}
 .stack-chip{display:flex; align-items:center; gap:12px; padding:12px 14px; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-md); transition:border-color .18s ease, transform .18s ease, background .18s ease;}
@@ -159,6 +161,7 @@ strong{color:var(--text); font-weight:600;}
 .stack-chip img{width:22px; height:22px; flex-shrink:0;}
 .stack-chip span{font-family:var(--font-mono); font-size:13px; color:var(--text-dim);}
 .stack-chip-icon{width:22px; height:22px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:15px; color:var(--accent);}
+.stack-chip-icon svg{width:18px; height:18px;}
 .stack-group-note{color:var(--text-dim); font-size:13.5px; line-height:1.6; margin-top:14px;}
 
 /* ---------- log / timeline ---------- */
@@ -327,7 +330,7 @@ strong{color:var(--text); font-weight:600;}
   .hero-visual{margin-top:32px;}
   .hero{padding:130px 0 60px;}
   .about-grid{grid-template-columns:1fr; gap:36px;}
-  .stack-groups{grid-template-columns:repeat(2,1fr);}
+  .stack-groups{grid-template-columns:repeat(3,1fr);}
   .work-grid{grid-template-columns:1fr;}
   .detail-card-grid{grid-template-columns:1fr;}
   .project-row{grid-template-columns:1fr; gap:24px;}
